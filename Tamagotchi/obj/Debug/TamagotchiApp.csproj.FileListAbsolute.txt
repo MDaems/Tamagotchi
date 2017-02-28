@@ -1,0 +1,13 @@
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\bin\Debug\TamagotchiApp.exe.config
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\bin\Debug\TamagotchiApp.exe
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\bin\Debug\TamagotchiApp.pdb
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\MainWindow.g.cs
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\App.g.cs
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp_MarkupCompile.cache
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp_MarkupCompile.lref
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\MainWindow.baml
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.g.resources
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.Properties.Resources.resources
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.csproj.GenerateResource.Cache
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.exe
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.pdb

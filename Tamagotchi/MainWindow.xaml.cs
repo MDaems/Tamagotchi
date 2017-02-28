@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Tamagotchi
+namespace TamagotchiApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,14 @@ namespace Tamagotchi
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        { 
+            //creating the object of WCF service client    
+            TamagotchiServiceRef.TamagotchiServiceClient service = new TamagotchiServiceRef.TamagotchiServiceClient();
+            Dictionary<string, TamagotchiServiceRef.Tamagotchi> list = service.GetAllTamagotchi();
         }
     }
 }
