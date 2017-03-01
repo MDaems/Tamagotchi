@@ -57,11 +57,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service References\TamagotchiServiceRef\Reference.cs">
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Service References\TamagotchiServiceLocal\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TamagotchiVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,26 +100,23 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiApp.TamagotchiServiceRef.CompositeType.datasource">
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiApp.TamagotchiServiceLocal.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiApp.TamagotchiServiceRef.Tamagotchi.datasource">
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiApp.TamagotchiServiceLocal.Tamagotchi.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService.wsdl" />
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService.xsd">
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiService.wsdl" />
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService1.xsd">
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService2.xsd">
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService4.xsd">
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiService3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -128,19 +127,22 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\TamagotchiServiceRef\" />
+    <Resource Include="Images\Health.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TamagotchiServiceRef\TamagotchiService.disco" />
+    <WCFMetadataStorage Include="Service References\TamagotchiServiceLocal\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TamagotchiServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\TamagotchiServiceLocal\TamagotchiService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TamagotchiServiceRef\configuration.svcinfo" />
+    <None Include="Service References\TamagotchiServiceLocal\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TamagotchiServiceRef\Reference.svcmap">
+    <None Include="Service References\TamagotchiServiceLocal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TamagotchiServiceLocal\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

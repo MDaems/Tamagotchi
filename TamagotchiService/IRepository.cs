@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using TamagotchiService.Models;
+using TamagotchiWebService;
 
 namespace TamagotchiService
 {
     public interface IRepository
     {
-
-        Dictionary<string, Tamagotchi> GetAll();
+        List<Tamagotchi> GetAll();
+        Tamagotchi Get(int id);
+        void Add(string name);
+        void UpdateAll();
     }
 }

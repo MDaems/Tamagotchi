@@ -42,6 +42,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -71,6 +79,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -92,12 +102,39 @@
   <ItemGroup>
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="TamagotchiModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TamagotchiModel.edmx</DependentUpon>
+      <LastGenOutput>TamagotchiModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TamagotchiModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TamagotchiModel.edmx</DependentUpon>
+      <LastGenOutput>TamagotchiModel.cs</LastGenOutput>
+    </Content>
     <Content Include="TamagotchiService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
-    <Compile Include="Models\Tamagotchi.cs" />
+    <Compile Include="Tamagotchi.cs">
+      <DependentUpon>TamagotchiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TamagotchiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TamagotchiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TamagotchiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TamagotchiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TamagotchiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TamagotchiModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="TamagotchiRepo.cs" />
     <Compile Include="TamagotchiService.svc.cs">
       <DependentUpon>TamagotchiService.svc</DependentUpon>
@@ -115,6 +152,13 @@
     </Content>
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Properties\PublishProfiles\MDaemsTamagotchiService - Web Deploy.pubxml" />
+    <EntityDeploy Include="TamagotchiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TamagotchiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="TamagotchiModel.edmx.diagram">
+      <DependentUpon>TamagotchiModel.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testDBModelStoreContainer" CdmEntityContainer="testDBEntities">
+    <EntitySetMapping Name="Tamagotchi">
+      <EntityTypeMapping TypeName="testDBModel.Tamagotchi">
+        <MappingFragment StoreEntitySet="Tamagotchi">
+          <ScalarProperty Name="Health" ColumnName="Health" />
+          <ScalarProperty Name="Boredom" ColumnName="Boredom" />
+          <ScalarProperty Name="Sleep" ColumnName="Sleep" />
+          <ScalarProperty Name="Hunger" ColumnName="Hunger" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

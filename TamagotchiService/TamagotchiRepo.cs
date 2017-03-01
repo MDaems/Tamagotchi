@@ -1,39 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using TamagotchiService.Models;
+using TamagotchiWebService;
 
 namespace TamagotchiService
 {
     public class TamagotchiRepo : IRepository
     {
-        Dictionary<string, Tamagotchi> tamagotchies = new Dictionary<string, Tamagotchi>();
+        List<Tamagotchi> tamagotchies;
+        TamagotchiWebService.testDBEntities context;
 
-        SqlConnection conn;
-        SqlCommand cmd;
 
         public TamagotchiRepo()
         {
-            conn = new SqlConnection("Server=tcp:testservermdaems.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=mdaems;Password=Rotterdam94;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            context = new TamagotchiWebService.testDBEntities();
+            tamagotchies = context.Tamagotchi.ToList();
         }
 
-        public Dictionary<string, Tamagotchi> GetAll()
+        public List<Tamagotchi> GetAll()
         {
-            conn.Open();
-            cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Tamagotchi;";
-            SqlDataReader reader = cmd.ExecuteReader();
+            tamagotchies = context.Tamagotchi.ToList();
+            return context.Tamagotchi.ToList();
+        }
 
-            while (reader.Read())
+        public Tamagotchi Get(int id)
+        {
+            return context.Tamagotchi.Where(t => t.ID == id).FirstOrDefault();
+        }
+
+        public void Add(string name)
+        {
+            Tamagotchi tamagotchi = new Tamagotchi();
+            tamagotchi.Name = name;
+            tamagotchi.Age = 0;
+            tamagotchi.Hunger = 0;
+            tamagotchi.Sleep = 0;
+            tamagotchi.Boredom = 0;
+            tamagotchi.Health = 100;
+
+            context.Tamagotchi.Add(tamagotchi);
+            context.SaveChanges();
+        }
+
+        public void UpdateAll()
+        {
+            foreach (var tamagotchi in tamagotchies)
             {
-                Tamagotchi tamagotchi = new Tamagotchi(reader["Name"].ToString());
-                tamagotchies.Add(reader["ID"].ToString(), tamagotchi);
-            }
-            conn.Close();
+                var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
 
-            return tamagotchies;
+                DateTime now = DateTime.UtcNow;
+                TimeSpan difference = now.Subtract(tamagotchi.LastAccess);
+                tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
+
+                tamagotchi.LastAccess = DateTime.UtcNow;
+
+                Random random = new Random();
+                tamagotchi.Hunger += random.Next(15, 35);
+                tamagotchi.Sleep += random.Next(15, 35);
+                tamagotchi.Boredom += random.Next(15, 35);
+            }
+
+            context.SaveChanges();
         }
     }
 }

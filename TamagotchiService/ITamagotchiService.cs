@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using TamagotchiService.Models;
+using TamagotchiWebService;
 
 namespace TamagotchiService
 {
@@ -14,11 +14,17 @@ namespace TamagotchiService
     public interface ITamagotchiService
     {
         [OperationContract]
-        Dictionary<string, Tamagotchi> GetAllTamagotchi();
-
+        List<Tamagotchi> GetAllTamagotchies();
 
         [OperationContract]
-        string GetData(int value);
+        Tamagotchi GetTamagotchi(int id);
+
+        [OperationContract]
+        void AddTamagotchi(string name);
+
+        [OperationContract]
+        void StartTimer();
+
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

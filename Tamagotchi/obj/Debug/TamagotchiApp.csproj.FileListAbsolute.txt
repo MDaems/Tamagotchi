@@ -11,3 +11,4 @@ c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\D
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.csproj.GenerateResource.Cache
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.exe
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.pdb
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.csprojResolveAssemblyReference.cache

@@ -7,7 +7,55 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="197,90,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
 
+        <Canvas Name="MyCanvas">
+            <DataGrid ItemsSource="{Binding Tamagotchies}" SelectedItem="{Binding SelectedTamagotchi}" AutoGenerateColumns="False" Canvas.Left="10" Canvas.Top="10" Height="301" Width="206">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="NAME" Binding="{Binding Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Image Source="{Binding SelectedTamagotchi.DisplayedImage}"  HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="81" Canvas.Left="428" Canvas.Top="22"/>
+
+            <Label Content="Name" Canvas.Left="237" Canvas.Top="21" Width="58"/>
+            <Label Content="{Binding SelectedTamagotchi.Name}" Canvas.Left="304" Canvas.Top="21" Height="26" Width="105"/>
+
+
+            <Button Command="{Binding EatCommand}" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="45" Height="38" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Canvas.Left="233" Canvas.Top="273">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/TamagotchiApp;component/Images/Health.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding SleepCommand}" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="45" Height="38" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Canvas.Left="283" Canvas.Top="273">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/Health.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding HugCommand}" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="45" Height="38" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Canvas.Left="328" Canvas.Top="273">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/Health.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding PlayCommand}" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="45" Height="38" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Canvas.Left="378" Canvas.Top="273">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/Health.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding WorkoutCommand}" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="45" Height="38" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Canvas.Left="428" Canvas.Top="273">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/Health.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <Label Content="Age" Canvas.Left="237" Canvas.Top="52" Width="58"/>
+            <Label Content="{Binding SelectedTamagotchi.Age}" Canvas.Left="304" Canvas.Top="52" Height="26" Width="105"/>
+            <Label Content="Hunger" Canvas.Left="238" Canvas.Top="83" Width="57"/>
+            <ProgressBar Value="{Binding SelectedTamagotchi.Hunger}" Height="26" Canvas.Left="304" Canvas.Top="83" Width="105"/>
+            <Label Content="Sleep" Canvas.Left="237" Canvas.Top="114" Width="58"/>
+            <ProgressBar Value="{Binding SelectedTamagotchi.Sleep}" Height="26" Canvas.Left="304" Canvas.Top="114" Width="105"/>
+            <Label Content="Boredom" Canvas.Left="237" Canvas.Top="145" Width="58"/>
+            <ProgressBar Value="{Binding SelectedTamagotchi.Boredom}" Height="26" Canvas.Left="304" Canvas.Top="145" Width="105"/>
+            <Label Content="Health" Canvas.Left="237" Canvas.Top="176" Width="58"/>
+            <ProgressBar Value="{Binding SelectedTamagotchi.Health}" Height="26" Canvas.Left="304" Canvas.Top="176" Width="105"/>
+        </Canvas>
     </Grid>
 </Window>

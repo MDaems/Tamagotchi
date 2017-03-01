@@ -16,3 +16,8 @@ c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiServic
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\Microsoft.ApplicationInsights.xml
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.dll
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.pdb
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\EntityFramework.dll
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\EntityFramework.SqlServer.dll
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\EntityFramework.xml
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\EntityFramework.SqlServer.xml
+c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.csprojResolveAssemblyReference.cache

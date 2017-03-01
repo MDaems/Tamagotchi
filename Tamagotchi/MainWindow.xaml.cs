@@ -18,19 +18,16 @@ namespace TamagotchiApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window 
     {
+        private MainViewModel viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
             
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        { 
-            //creating the object of WCF service client    
-            TamagotchiServiceRef.TamagotchiServiceClient service = new TamagotchiServiceRef.TamagotchiServiceClient();
-            Dictionary<string, TamagotchiServiceRef.Tamagotchi> list = service.GetAllTamagotchi();
+            viewModel = new MainViewModel();
+            this.DataContext = viewModel;
         }
     }
 }

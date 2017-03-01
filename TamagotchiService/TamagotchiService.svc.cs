@@ -5,7 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using TamagotchiService.Models;
+using System.Timers;
+using TamagotchiWebService;
 
 namespace TamagotchiService
 {
@@ -20,15 +21,19 @@ namespace TamagotchiService
             tamagotchiRepo = new TamagotchiRepo();
         }
 
-        public Dictionary<string, Tamagotchi> GetAllTamagotchi()
+        public List<Tamagotchi> GetAllTamagotchies()
         {
             return tamagotchiRepo.GetAll();
         }
 
-
-        public string GetData(int value)
+        public Tamagotchi GetTamagotchi(int id)
         {
-            return string.Format("You entered: {0}", value);
+            return tamagotchiRepo.Get(id);
+        }
+
+        public void AddTamagotchi(string name)
+        {
+            tamagotchiRepo.Add(name);
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
@@ -44,5 +49,18 @@ namespace TamagotchiService
             return composite;
         }
 
+        public void StartTimer()
+        {
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(Time_Elapsed);
+            timer.Interval = 10000;
+            timer.Enabled = true;
+            timer.Start();
+        }
+
+        private void Time_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            tamagotchiRepo.UpdateAll();
+        }
     }
 }
