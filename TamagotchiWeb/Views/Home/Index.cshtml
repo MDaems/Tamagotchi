@@ -1,0 +1,33 @@
+﻿@using TamagotchiWeb.TamagotchiServiceLocal;
+@model Tamagotchi
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+
+   <h3>New Tamagotchi</h3>
+    @using (Html.BeginForm("Add", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.Name)
+
+
+        <button type="submit">Add</button>
+    }
+
+    <h2>My Tamagothi's</h2>
+    <ul>
+       
+    @{
+
+        foreach (var item in ViewBag.Tamagotchis)
+        {
+            <li>
+                @Html.ActionLink((string)@item.Name, "About", "Home", new { id = item.ID }, null)
+            </li>
+        }
+        }
+
+    </ul>
+</div>
+

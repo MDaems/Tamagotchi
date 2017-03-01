@@ -16,6 +16,7 @@ namespace TamagotchiService
         {
             context = new TamagotchiWebService.testDBEntities();
             tamagotchies = new List<Tamagotchi>();
+            tamagotchies = context.Tamagotchi.ToList();
         }
 
         public List<Tamagotchi> GetAll()
