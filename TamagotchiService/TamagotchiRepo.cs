@@ -15,7 +15,7 @@ namespace TamagotchiService
         public TamagotchiRepo()
         {
             context = new TamagotchiWebService.testDBEntities();
-            tamagotchies = context.Tamagotchi.ToList();
+            tamagotchies = new List<Tamagotchi>();
         }
 
         public List<Tamagotchi> GetAll()
@@ -59,6 +59,10 @@ namespace TamagotchiService
                 tamagotchi.Hunger += random.Next(15, 35);
                 tamagotchi.Sleep += random.Next(15, 35);
                 tamagotchi.Boredom += random.Next(15, 35);
+
+                if(tamagotchi.Hunger > 100) { tamagotchi.Hunger = 100; }
+                if (tamagotchi.Sleep > 100) { tamagotchi.Sleep = 100; }
+                if (tamagotchi.Boredom > 100) { tamagotchi.Boredom = 100; }
             }
 
             context.SaveChanges();
