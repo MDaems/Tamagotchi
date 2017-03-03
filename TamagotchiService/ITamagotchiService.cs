@@ -14,6 +14,9 @@ namespace TamagotchiService
     public interface ITamagotchiService
     {
         [OperationContract]
+        CompositeType GetDataUsingDataContract(CompositeType composite);
+
+        [OperationContract]
         List<Tamagotchi> GetAllTamagotchies();
 
         [OperationContract]
@@ -24,12 +27,6 @@ namespace TamagotchiService
 
         [OperationContract]
         void StartTimer();
-
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
     }
 
 

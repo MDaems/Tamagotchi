@@ -117,6 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
+    <Compile Include="Models\Crazy.cs" />
+    <Compile Include="Models\Exhausted.cs" />
+    <Compile Include="Models\IGameRule.cs" />
+    <Compile Include="Models\Munchies.cs" />
+    <Compile Include="Models\Starved.cs" />
     <Compile Include="Tamagotchi.cs">
       <DependentUpon>TamagotchiModel.tt</DependentUpon>
     </Compile>
