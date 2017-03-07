@@ -21,7 +21,7 @@ namespace TamagotchiService
         public List<Tamagotchi> GetAll()
         {
             tamagotchies = context.Tamagotchi.ToList();
-            return context.Tamagotchi.ToList();
+            return tamagotchies;
         }
 
         public Tamagotchi Get(int id)
@@ -38,9 +38,11 @@ namespace TamagotchiService
             tamagotchi.Sleep = 0;
             tamagotchi.Boredom = 0;
             tamagotchi.Health = 100;
-
+          
             context.Tamagotchi.Add(tamagotchi);
             context.SaveChanges();
+
+            tamagotchies.Add(tamagotchi);
         }
 
         public void UpdateAll()

@@ -14,3 +14,4 @@ C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebSer
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.csprojResolveAssemblyReference.cache
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.dll
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.pdb
+C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
