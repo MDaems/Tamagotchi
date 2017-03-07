@@ -9,10 +9,39 @@ namespace TamagotchiWeb.Controllers
     public class HomeController : Controller
     {
         TamagotchiServiceLocal.TamagotchiServiceClient service = new TamagotchiServiceLocal.TamagotchiServiceClient();
+        List<TamagotchiServiceLocal.Tamagotchi> TamagotchiList = new List<TamagotchiServiceLocal.Tamagotchi>();
 
-        public ActionResult Index()
+        public HomeController()
         {
-            List<TamagotchiServiceLocal.Tamagotchi> TamagotchiList = new List<TamagotchiServiceLocal.Tamagotchi>();
+            // Dynamically create new timer
+            System.Timers.Timer timScheduledTask = new System.Timers.Timer();
+
+            // Timer interval is set in miliseconds,
+            // In this case, we'll run a task every minute
+            timScheduledTask.Interval = 5000;
+
+            timScheduledTask.Enabled = true;
+
+            // Add handler for Elapsed event
+            timScheduledTask.Elapsed +=
+            new System.Timers.ElapsedEventHandler(timScheduledTask_Elapsed);
+        }
+
+        void timScheduledTask_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            // Execute some task
+            Console.WriteLine("Update");
+            foreach (var item in TamagotchiList)
+            {
+                service.ApplyGameRules(service.GetTamagotchi(item.ID));
+            }
+        }
+        
+
+
+        // GET: Index
+        public ActionResult Index()
+        {  
             foreach (TamagotchiServiceLocal.Tamagotchi item in service.GetAllTamagotchies())
             {
                 TamagotchiList.Add(item);
@@ -21,10 +50,12 @@ namespace TamagotchiWeb.Controllers
             return View();
         }
 
+        // GET: Index
         public ActionResult About(int id)
         {
             TamagotchiServiceLocal.Tamagotchi tamagotchi = service.GetTamagotchi(id);
-            //ViewBag.highestProperty = service.GetHighestProperty(tamagotchi);
+
+            ViewBag.Message = "Your detail page.";
 
             ViewBag.tamagotchi = tamagotchi;
 
@@ -36,6 +67,33 @@ namespace TamagotchiWeb.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        // POST: Detail
+        public RedirectToRouteResult Action()
+        {
+            string action = Request.Form["btAction"];
+            int id = Convert.ToInt32(Request.Form["tbID"].ToString());
+
+            string result = "Update";
+
+            switch (action)
+            {
+                case "Eat":
+                   service.Eat(id);
+                    break;
+                case "Sleep":
+                    service.Sleep(id);
+                    break;
+                case "Hug":
+                  service.Hug(id);
+                    break;
+                case "Play":
+                   service.Play(id);
+                    break;
+            }
+
+            return RedirectToAction("About", new { id = id, message = result });
         }
     }
 }

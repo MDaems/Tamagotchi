@@ -42,9 +42,6 @@ namespace TamagotchiService
 
         [OperationContract]
         Tamagotchi ApplyGameRules(Tamagotchi tamagotchi);
-        
-        [OperationContract]
-        void StartTimer();
     }
 
 

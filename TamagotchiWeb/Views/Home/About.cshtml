@@ -22,11 +22,11 @@
 <p>Sleep: @ViewBag.tamagotchi.Sleep</p>
 <p>Boredom: @ViewBag.tamagotchi.Boredom</p>
 
-<form action="/Tamagotchi/Action" method="post">
+<form action="/Home/Action" method="post">
     <button type="submit" class="btn btn-primary" name="btAction" value="Eat">Eat</button>
     <button type="submit" class="btn btn-primary" name="btAction" value="Sleep">Sleep</button>
     <button type="submit" class="btn btn-primary" name="btAction" value="Workout">Workout</button>
     <button type="submit" class="btn btn-primary" name="btAction" value="Hug">Hug</button>
     <button type="submit" class="btn btn-primary" name="btAction" value="Play">Play</button>
-    <input type="hidden" value="@ViewBag.tamagotchi.Name" name="tbName" />
+    <input type="hidden" value="@ViewBag.tamagotchi.ID" name="tbID" />
 </form>

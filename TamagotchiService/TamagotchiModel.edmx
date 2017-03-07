@@ -18,7 +18,21 @@
           <Property Name="Health" Type="int" Nullable="false" />
           <Property Name="LastAccess" Type="datetime" Nullable="false" />
           <Property Name="BusyTill" Type="datetime" Nullable="false" />
+          <Property Name="IsAlive" Type="bit" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'testDB.dbo.tamagotchis' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tamagotchis">
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="alive" Type="bit" />
+          <Property Name="hungerMultiplier" Type="int" />
+          <Property Name="sleep" Type="int" />
+          <Property Name="boredom" Type="int" />
+          <Property Name="health" Type="int" />
+          <Property Name="lastAcces" Type="datetime" />
+          <Property Name="busyTill" Type="datetime" />
+          <Property Name="isSleeping" Type="bit" />
+        </EntityType>-->
         <EntityContainer Name="testDBModelStoreContainer">
           <EntitySet Name="Tamagotchi" EntityType="Self.Tamagotchi" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -39,6 +53,7 @@
           <Property Name="Health" Type="Int32" Nullable="false" />
           <Property Name="LastAccess" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="BusyTill" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsAlive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="testDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tamagotchi" EntityType="Self.Tamagotchi" />
@@ -52,6 +67,7 @@
           <EntitySetMapping Name="Tamagotchi">
             <EntityTypeMapping TypeName="testDBModel.Tamagotchi">
               <MappingFragment StoreEntitySet="Tamagotchi">
+                <ScalarProperty Name="IsAlive" ColumnName="IsAlive" />
                 <ScalarProperty Name="BusyTill" ColumnName="BusyTill" />
                 <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
                 <ScalarProperty Name="Health" ColumnName="Health" />

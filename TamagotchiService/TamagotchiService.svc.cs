@@ -17,7 +17,7 @@ namespace TamagotchiService
     {
         IRepository tamagotchiRepo;
         List<IGameRule> gameRules;
-
+        private IRepository @object;
 
         public TamagotchiService()
         {
@@ -27,7 +27,12 @@ namespace TamagotchiService
             gameRules.Add(new Crazy());
             gameRules.Add(new Munchies());
             gameRules.Add(new Starved());
-            gameRules.Add(new Exhausted());
+            gameRules.Add(new Exhausted());   
+    }
+
+        public TamagotchiService(IRepository tamagotchiRepo)
+        {
+            this.tamagotchiRepo = tamagotchiRepo;
         }
 
         public void AddTamagotchi(string name)
@@ -48,27 +53,6 @@ namespace TamagotchiService
             return tamagotchi;
         }             
 
-        public void StartTimer()
-        {
-            System.Timers.Timer timer = new System.Timers.Timer();
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(Time_Elapsed);
-            timer.Interval = 5000;
-            timer.Enabled = true;
-            timer.Start();
-
-
-        }
-        private void Time_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            //foreach (var tamagotchi in GetAllTamagotchies())
-            //{
-            //    Tamagotchi tama = tamagotchi;
-            //    tama = ApplyGameRules(tama);
-            //    tamagotchiRepo.Update(tama);
-
-            //}
-            //tamagotchiRepo.UpdateAll();
-        }
 
         public Tamagotchi ApplyGameRules(Tamagotchi tamagotchi)
         {
@@ -84,8 +68,6 @@ namespace TamagotchiService
         public void Eat(int id)
         {
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
-            //tamagotchi = ApplyGameRules(tamagotchi);
-
             State state = new State(tamagotchi);
 
             tamagotchi.State = new State(tamagotchi);
@@ -93,18 +75,17 @@ namespace TamagotchiService
             if (state.CanPerformAction)
             {
                 tamagotchi.Hunger -= 50;
+                if (HealthDecrease(10)) { tamagotchi.Health -= 20; }
                 tamagotchi.BusyTill = DateTime.UtcNow.AddSeconds(5);
 
                 state.BusyMessage = tamagotchi.Name + " is eating till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
-
             }
+
             tamagotchiRepo.Update(tamagotchi);
         }
         public void Sleep(int id)
         {
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
-            //tamagotchi = ApplyGameRules(tamagotchi);
-
             State state = new State(tamagotchi);
 
             tamagotchi.State = new State(tamagotchi);
@@ -122,8 +103,6 @@ namespace TamagotchiService
         public void Play(int id)
         {
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
-            //tamagotchi = ApplyGameRules(tamagotchi);
-
             State state = new State(tamagotchi);
 
             tamagotchi.State = new State(tamagotchi);
@@ -131,18 +110,16 @@ namespace TamagotchiService
             if (state.CanPerformAction)
             {
                 tamagotchi.Boredom -= 35;
+                if (HealthDecrease(20)) { tamagotchi.Health -= 10; }
                 tamagotchi.BusyTill = DateTime.UtcNow.AddSeconds(8);
 
                 state.BusyMessage = tamagotchi.Name + " is playing till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
-
             }
             tamagotchiRepo.Update(tamagotchi);
         }
         public void Hug(int id)
         {
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
-            //tamagotchi = ApplyGameRules(tamagotchi);
-
             State state = new State(tamagotchi);
 
             tamagotchi.State = new State(tamagotchi);
@@ -157,7 +134,20 @@ namespace TamagotchiService
 
                 state.BusyMessage = tamagotchi.Name + " is huging till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
             }
+
             tamagotchiRepo.Update(tamagotchi);
+        }
+
+        private bool HealthDecrease(int perc)
+        {
+            Random s_Random = new Random();
+            int randPerc = s_Random.Next(0, 100);
+
+            if (randPerc < perc)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void ResetTamagotchies()

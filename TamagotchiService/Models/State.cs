@@ -43,11 +43,12 @@ namespace TamagotchiWebService
 
         private void CheckIfDead(Tamagotchi tamagotchi)
         {
-            //if (!tamagotchi.Alive)
-            //{
-            //    CanPerformAction = false;
-            //    BusyMessage = "Tamagotchi " + tamagotchi.Name + " has passed away";
-            //}
+            if(tamagotchi.Health <= 0) { tamagotchi.IsAlive = false; }
+            if (!tamagotchi.IsAlive)
+            {
+                CanPerformAction = false;
+                BusyMessage = "Tamagotchi " + tamagotchi.Name + " has passed away";
+            }
         }
 
         private void CheckHighestProperty(Tamagotchi tamagotchi)

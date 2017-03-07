@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Tamagotchi">
       <EntityTypeMapping TypeName="testDBModel.Tamagotchi">
         <MappingFragment StoreEntitySet="Tamagotchi">
+          <ScalarProperty Name="IsAlive" ColumnName="IsAlive" />
           <ScalarProperty Name="BusyTill" ColumnName="BusyTill" />
           <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
           <ScalarProperty Name="Health" ColumnName="Health" />
