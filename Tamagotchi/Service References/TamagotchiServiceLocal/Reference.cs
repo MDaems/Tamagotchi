@@ -15,6 +15,67 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/TamagotchiService")]
+    [System.SerializableAttribute()]
+    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BoolValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StringValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool BoolValue {
+            get {
+                return this.BoolValueField;
+            }
+            set {
+                if ((this.BoolValueField.Equals(value) != true)) {
+                    this.BoolValueField = value;
+                    this.RaisePropertyChanged("BoolValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StringValue {
+            get {
+                return this.StringValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
+                    this.StringValueField = value;
+                    this.RaisePropertyChanged("StringValue");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Tamagotchi", Namespace="http://schemas.datacontract.org/2004/07/TamagotchiWebService")]
     [System.SerializableAttribute()]
     public partial class Tamagotchi : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -27,6 +88,9 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int BoredomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BusyTillField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int HealthField;
@@ -45,6 +109,9 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SleepField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TamagotchiApp.TamagotchiServiceLocal.State StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -78,6 +145,19 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
                 if ((this.BoredomField.Equals(value) != true)) {
                     this.BoredomField = value;
                     this.RaisePropertyChanged("Boredom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime BusyTill {
+            get {
+                return this.BusyTillField;
+            }
+            set {
+                if ((this.BusyTillField.Equals(value) != true)) {
+                    this.BusyTillField = value;
+                    this.RaisePropertyChanged("BusyTill");
                 }
             }
         }
@@ -160,6 +240,19 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TamagotchiApp.TamagotchiServiceLocal.State State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -172,18 +265,24 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/TamagotchiService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="State", Namespace="http://schemas.datacontract.org/2004/07/TamagotchiWebService")]
     [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class State : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
+        private string BusyMessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
+        private bool CanPerformActionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HighestPropertyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HighestPropertyMessageField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -196,27 +295,53 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
+        public string BusyMessage {
             get {
-                return this.BoolValueField;
+                return this.BusyMessageField;
             }
             set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
+                if ((object.ReferenceEquals(this.BusyMessageField, value) != true)) {
+                    this.BusyMessageField = value;
+                    this.RaisePropertyChanged("BusyMessage");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
+        public bool CanPerformAction {
             get {
-                return this.StringValueField;
+                return this.CanPerformActionField;
             }
             set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
+                if ((this.CanPerformActionField.Equals(value) != true)) {
+                    this.CanPerformActionField = value;
+                    this.RaisePropertyChanged("CanPerformAction");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HighestProperty {
+            get {
+                return this.HighestPropertyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HighestPropertyField, value) != true)) {
+                    this.HighestPropertyField = value;
+                    this.RaisePropertyChanged("HighestProperty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HighestPropertyMessage {
+            get {
+                return this.HighestPropertyMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HighestPropertyMessageField, value) != true)) {
+                    this.HighestPropertyMessageField = value;
+                    this.RaisePropertyChanged("HighestPropertyMessage");
                 }
             }
         }
@@ -234,6 +359,18 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TamagotchiServiceLocal.ITamagotchiService")]
     public interface ITamagotchiService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ITamagotchiService/GetDataUsingDataContractResponse")]
+        TamagotchiApp.TamagotchiServiceLocal.CompositeType GetDataUsingDataContract(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ITamagotchiService/GetDataUsingDataContractResponse")]
+        System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.CompositeType> GetDataUsingDataContractAsync(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/ResetTamagotchies", ReplyAction="http://tempuri.org/ITamagotchiService/ResetTamagotchiesResponse")]
+        void ResetTamagotchies();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/ResetTamagotchies", ReplyAction="http://tempuri.org/ITamagotchiService/ResetTamagotchiesResponse")]
+        System.Threading.Tasks.Task ResetTamagotchiesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/GetAllTamagotchies", ReplyAction="http://tempuri.org/ITamagotchiService/GetAllTamagotchiesResponse")]
         TamagotchiApp.TamagotchiServiceLocal.Tamagotchi[] GetAllTamagotchies();
@@ -253,17 +390,41 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/AddTamagotchi", ReplyAction="http://tempuri.org/ITamagotchiService/AddTamagotchiResponse")]
         System.Threading.Tasks.Task AddTamagotchiAsync(string name);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Eat", ReplyAction="http://tempuri.org/ITamagotchiService/EatResponse")]
+        void Eat(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Eat", ReplyAction="http://tempuri.org/ITamagotchiService/EatResponse")]
+        System.Threading.Tasks.Task EatAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Sleep", ReplyAction="http://tempuri.org/ITamagotchiService/SleepResponse")]
+        void Sleep(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Sleep", ReplyAction="http://tempuri.org/ITamagotchiService/SleepResponse")]
+        System.Threading.Tasks.Task SleepAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Play", ReplyAction="http://tempuri.org/ITamagotchiService/PlayResponse")]
+        void Play(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Play", ReplyAction="http://tempuri.org/ITamagotchiService/PlayResponse")]
+        System.Threading.Tasks.Task PlayAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Hug", ReplyAction="http://tempuri.org/ITamagotchiService/HugResponse")]
+        void Hug(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/Hug", ReplyAction="http://tempuri.org/ITamagotchiService/HugResponse")]
+        System.Threading.Tasks.Task HugAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/ApplyGameRules", ReplyAction="http://tempuri.org/ITamagotchiService/ApplyGameRulesResponse")]
+        TamagotchiApp.TamagotchiServiceLocal.Tamagotchi ApplyGameRules(TamagotchiApp.TamagotchiServiceLocal.Tamagotchi tamagotchi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/ApplyGameRules", ReplyAction="http://tempuri.org/ITamagotchiService/ApplyGameRulesResponse")]
+        System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.Tamagotchi> ApplyGameRulesAsync(TamagotchiApp.TamagotchiServiceLocal.Tamagotchi tamagotchi);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/StartTimer", ReplyAction="http://tempuri.org/ITamagotchiService/StartTimerResponse")]
         void StartTimer();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/StartTimer", ReplyAction="http://tempuri.org/ITamagotchiService/StartTimerResponse")]
         System.Threading.Tasks.Task StartTimerAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ITamagotchiService/GetDataUsingDataContractResponse")]
-        TamagotchiApp.TamagotchiServiceLocal.CompositeType GetDataUsingDataContract(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ITamagotchiService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.CompositeType> GetDataUsingDataContractAsync(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -293,6 +454,22 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
                 base(binding, remoteAddress) {
         }
         
+        public TamagotchiApp.TamagotchiServiceLocal.CompositeType GetDataUsingDataContract(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite) {
+            return base.Channel.GetDataUsingDataContract(composite);
+        }
+        
+        public System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.CompositeType> GetDataUsingDataContractAsync(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite) {
+            return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public void ResetTamagotchies() {
+            base.Channel.ResetTamagotchies();
+        }
+        
+        public System.Threading.Tasks.Task ResetTamagotchiesAsync() {
+            return base.Channel.ResetTamagotchiesAsync();
+        }
+        
         public TamagotchiApp.TamagotchiServiceLocal.Tamagotchi[] GetAllTamagotchies() {
             return base.Channel.GetAllTamagotchies();
         }
@@ -317,20 +494,52 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
             return base.Channel.AddTamagotchiAsync(name);
         }
         
+        public void Eat(int id) {
+            base.Channel.Eat(id);
+        }
+        
+        public System.Threading.Tasks.Task EatAsync(int id) {
+            return base.Channel.EatAsync(id);
+        }
+        
+        public void Sleep(int id) {
+            base.Channel.Sleep(id);
+        }
+        
+        public System.Threading.Tasks.Task SleepAsync(int id) {
+            return base.Channel.SleepAsync(id);
+        }
+        
+        public void Play(int id) {
+            base.Channel.Play(id);
+        }
+        
+        public System.Threading.Tasks.Task PlayAsync(int id) {
+            return base.Channel.PlayAsync(id);
+        }
+        
+        public void Hug(int id) {
+            base.Channel.Hug(id);
+        }
+        
+        public System.Threading.Tasks.Task HugAsync(int id) {
+            return base.Channel.HugAsync(id);
+        }
+        
+        public TamagotchiApp.TamagotchiServiceLocal.Tamagotchi ApplyGameRules(TamagotchiApp.TamagotchiServiceLocal.Tamagotchi tamagotchi) {
+            return base.Channel.ApplyGameRules(tamagotchi);
+        }
+        
+        public System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.Tamagotchi> ApplyGameRulesAsync(TamagotchiApp.TamagotchiServiceLocal.Tamagotchi tamagotchi) {
+            return base.Channel.ApplyGameRulesAsync(tamagotchi);
+        }
+        
         public void StartTimer() {
             base.Channel.StartTimer();
         }
         
         public System.Threading.Tasks.Task StartTimerAsync() {
             return base.Channel.StartTimerAsync();
-        }
-        
-        public TamagotchiApp.TamagotchiServiceLocal.CompositeType GetDataUsingDataContract(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.CompositeType> GetDataUsingDataContractAsync(TamagotchiApp.TamagotchiServiceLocal.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
         }
     }
 }

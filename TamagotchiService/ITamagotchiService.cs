@@ -17,6 +17,9 @@ namespace TamagotchiService
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
+        void ResetTamagotchies();
+
+        [OperationContract]
         List<Tamagotchi> GetAllTamagotchies();
 
         [OperationContract]
@@ -25,6 +28,21 @@ namespace TamagotchiService
         [OperationContract]
         void AddTamagotchi(string name);
 
+        [OperationContract]
+        void Eat(int id);
+
+        [OperationContract]
+        void Sleep(int id);
+
+        [OperationContract]
+        void Play(int id);
+
+        [OperationContract]
+        void Hug(int id);
+
+        [OperationContract]
+        Tamagotchi ApplyGameRules(Tamagotchi tamagotchi);
+        
         [OperationContract]
         void StartTimer();
     }

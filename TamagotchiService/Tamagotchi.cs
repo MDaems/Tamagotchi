@@ -22,5 +22,8 @@ namespace TamagotchiWebService
         public int Boredom { get; set; }
         public int Health { get; set; }
         public System.DateTime LastAccess { get; set; }
+        public System.DateTime BusyTill { get; set; }
+
+        public State State { get; set; }
     }
 }

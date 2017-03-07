@@ -122,6 +122,7 @@
     <Compile Include="Models\IGameRule.cs" />
     <Compile Include="Models\Munchies.cs" />
     <Compile Include="Models\Starved.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Tamagotchi.cs">
       <DependentUpon>TamagotchiModel.tt</DependentUpon>
     </Compile>

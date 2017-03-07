@@ -10,6 +10,7 @@ namespace TamagotchiApp
     class TamagotchiVM : INotifyPropertyChanged
     {
         private TamagotchiServiceLocal.Tamagotchi _tamagotchi;
+        private TamagotchiServiceLocal.State _state;
 
         public TamagotchiVM(int ID, TamagotchiServiceLocal.Tamagotchi tamagotchi)
         {
@@ -19,6 +20,7 @@ namespace TamagotchiApp
         public void Update(TamagotchiServiceLocal.Tamagotchi tamagotchi)
         {
             _tamagotchi = tamagotchi;
+            _state = tamagotchi.State;
         }
 
         public int ID
@@ -87,14 +89,48 @@ namespace TamagotchiApp
             }
         }
 
+        string _displayImage;
         public string DisplayedImage
         {
             get
             {
-                //return "/Images/" + _tamagotchi.Name;
-                return "/Images/Health.png";
+                return "/Images/"+ _state.HighestProperty +".png";
+            }
+            set
+            {
+                _displayImage = "/Images/" + value + ".png";
+                RaisePropertyChanged("DisplayedImage");
             }
         }
+
+        string _status;
+        public string Status
+        {
+            get
+            {
+                return _state.HighestPropertyMessage;
+            }
+            set
+            {
+                _status = value;
+                RaisePropertyChanged("Status");
+            }
+        }
+
+        string _actionStatus;
+        public string ActionStatus
+        {
+            get
+            {
+                return _state.BusyMessage;
+            }
+            set
+            {
+                _actionStatus = value;
+                RaisePropertyChanged("ActionStatus");
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

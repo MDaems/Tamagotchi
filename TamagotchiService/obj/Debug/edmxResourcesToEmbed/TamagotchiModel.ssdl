@@ -12,6 +12,7 @@
     <Property Name="Boredom" Type="int" Nullable="false" />
     <Property Name="Health" Type="int" Nullable="false" />
     <Property Name="LastAccess" Type="datetime" Nullable="false" />
+    <Property Name="BusyTill" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityContainer Name="testDBModelStoreContainer">
     <EntitySet Name="Tamagotchi" EntityType="Self.Tamagotchi" Schema="dbo" store:Type="Tables" />

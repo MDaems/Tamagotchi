@@ -27,7 +27,7 @@ namespace TamagotchiService
 
         public Tamagotchi Get(int id)
         {
-            return context.Tamagotchi.Where(t => t.ID == id).FirstOrDefault();
+            return context.Tamagotchi.Find(id);
         }
 
         public void Add(string name)
@@ -46,25 +46,63 @@ namespace TamagotchiService
 
         public void UpdateAll()
         {
+            //foreach (var tamagotchi in tamagotchies)
+            //{
+            //    var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
+
+            //    DateTime now = DateTime.UtcNow;
+            //    TimeSpan difference = now.Subtract(tamagotchi.LastAccess);
+            //    tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
+
+            //    tamagotchi.LastAccess = DateTime.UtcNow;
+
+            //    Random random = new Random();
+            //    tamagotchi.Hunger += random.Next(5, 10);
+            //    tamagotchi.Sleep += random.Next(5, 10);
+            //    tamagotchi.Boredom += random.Next(5, 10);
+
+            //    if (tamagotchi.Hunger > 100) { tamagotchi.Hunger = 100; }
+            //    if (tamagotchi.Sleep > 100) { tamagotchi.Sleep = 100; }
+            //    if (tamagotchi.Boredom > 100) { tamagotchi.Boredom = 100; }        
+            //}
+            //context.SaveChanges();
+        }
+
+        public void ResetAll()
+        {
             foreach (var tamagotchi in tamagotchies)
             {
                 var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
 
-                DateTime now = DateTime.UtcNow;
-                TimeSpan difference = now.Subtract(tamagotchi.LastAccess);
-                tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
+                tamaContext.Age = 0;
+                tamaContext.LastAccess = DateTime.UtcNow;
+                tamaContext.Hunger = 0;
+                tamaContext.Sleep = 0;
+                tamaContext.Boredom = 0;
+                tamaContext.Health = 100;
 
-                tamagotchi.LastAccess = DateTime.UtcNow;
-
-                Random random = new Random();
-                tamagotchi.Hunger += random.Next(15, 35);
-                tamagotchi.Sleep += random.Next(15, 35);
-                tamagotchi.Boredom += random.Next(15, 35);
-
-                if(tamagotchi.Hunger > 100) { tamagotchi.Hunger = 100; }
-                if (tamagotchi.Sleep > 100) { tamagotchi.Sleep = 100; }
-                if (tamagotchi.Boredom > 100) { tamagotchi.Boredom = 100; }
+                context.SaveChanges();
             }
+        }
+
+        public void Update(Tamagotchi tamagotchi)
+        {
+            var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
+
+            DateTime now = DateTime.UtcNow;
+            TimeSpan difference = now.Subtract(tamaContext.LastAccess);
+            tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
+
+            tamaContext.LastAccess = DateTime.UtcNow;
+
+            Random random = new Random();
+            tamaContext.Hunger += random.Next(5, 10);
+            tamaContext.Sleep += random.Next(5, 10);
+            tamaContext.Boredom += random.Next(5, 10);
+
+            if (tamaContext.Hunger > 100) { tamagotchi.Hunger = 100; }
+            if (tamaContext.Sleep > 100) { tamagotchi.Sleep = 100; }
+            if (tamaContext.Boredom > 100) { tamagotchi.Boredom = 100; }
 
             context.SaveChanges();
         }

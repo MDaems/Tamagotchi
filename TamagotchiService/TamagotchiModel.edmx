@@ -17,6 +17,7 @@
           <Property Name="Boredom" Type="int" Nullable="false" />
           <Property Name="Health" Type="int" Nullable="false" />
           <Property Name="LastAccess" Type="datetime" Nullable="false" />
+          <Property Name="BusyTill" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="testDBModelStoreContainer">
           <EntitySet Name="Tamagotchi" EntityType="Self.Tamagotchi" Schema="dbo" store:Type="Tables" />
@@ -37,6 +38,7 @@
           <Property Name="Boredom" Type="Int32" Nullable="false" />
           <Property Name="Health" Type="Int32" Nullable="false" />
           <Property Name="LastAccess" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="BusyTill" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="testDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tamagotchi" EntityType="Self.Tamagotchi" />
@@ -50,6 +52,7 @@
           <EntitySetMapping Name="Tamagotchi">
             <EntityTypeMapping TypeName="testDBModel.Tamagotchi">
               <MappingFragment StoreEntitySet="Tamagotchi">
+                <ScalarProperty Name="BusyTill" ColumnName="BusyTill" />
                 <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
                 <ScalarProperty Name="Health" ColumnName="Health" />
                 <ScalarProperty Name="Boredom" ColumnName="Boredom" />

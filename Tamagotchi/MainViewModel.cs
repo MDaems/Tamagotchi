@@ -1,10 +1,12 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace TamagotchiApp
@@ -35,7 +37,13 @@ namespace TamagotchiApp
             }
         }
 
-        private DispatcherTimer timer;
+        private DispatcherTimer UpdateUITimer;
+        private DispatcherTimer UpdateTimer;
+
+        public ICommand EatCommand { get; set;}
+        public ICommand SleepCommand { get; set; }
+        public ICommand PlayCommand { get; set; }
+        public ICommand HugCommand { get; set; }
 
         public MainViewModel()
         {
@@ -43,6 +51,9 @@ namespace TamagotchiApp
 
             //creating the object of WCF service client    
             service = new TamagotchiServiceLocal.TamagotchiServiceClient();
+                //service.Abort();
+           
+            //service.ResetTamagotchies();
 
             foreach (var item in service.GetAllTamagotchies())
             {
@@ -51,23 +62,66 @@ namespace TamagotchiApp
                 SelectedTamagotchi = Tamagotchies.FirstOrDefault();
             }
 
-            timer = new DispatcherTimer();
-            timer.Start();
-            timer.Interval = TimeSpan.FromSeconds(1.0);
-            timer.Tick += timer_Tick;
+            UpdateUITimer = new DispatcherTimer();
+            UpdateUITimer.Start();
+            UpdateUITimer.Interval = TimeSpan.FromSeconds(2.0);
+            UpdateUITimer.Tick += UpdateUI_timer;
+
+            UpdateTimer = new DispatcherTimer();
+            UpdateTimer.Start();
+            UpdateTimer.Interval = TimeSpan.FromSeconds(5.0);
+            UpdateTimer.Tick += Update_timer;
 
             service.StartTimer();
 
+            EatCommand = new RelayCommand(Eat);
+            SleepCommand = new RelayCommand(Sleep);
+            PlayCommand = new RelayCommand(Play);
+            HugCommand = new RelayCommand(Hug);
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Eat()
+        {
+            service.Eat(SelectedTamagotchi.ID);
+            UpdateTamagotchi();
+        }
+        private void Sleep()
+        {
+            service.Sleep(SelectedTamagotchi.ID);
+            UpdateTamagotchi();
+        }
+        private void Play()
+        {
+            service.Play(SelectedTamagotchi.ID);
+            UpdateTamagotchi();
+
+            service.Close();
+        }
+        private void Hug()
+        {
+            service.Hug(SelectedTamagotchi.ID);
+            UpdateTamagotchi();
+        }
+
+        private void UpdateUI_timer(object sender, EventArgs e)
+        {
+            UpdateTamagotchi();
+        }
+        private void Update_timer(object sender, EventArgs e)
+        {
+            foreach (var item in Tamagotchies)
+            {
+                service.ApplyGameRules(service.GetTamagotchi(item.ID));
+            }
+            
+        }
+        private void UpdateTamagotchi()
         {
             SelectedTamagotchi.Update(service.GetTamagotchi(SelectedTamagotchi.ID));
             RaisePropertyChanged("SelectedTamagotchi");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         private void RaisePropertyChanged(string propertyName)
         {
             // take a copy to prevent thread issues
