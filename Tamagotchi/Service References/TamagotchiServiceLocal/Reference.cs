@@ -102,6 +102,9 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsAliveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastAccessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -197,6 +200,19 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsAlive {
+            get {
+                return this.IsAliveField;
+            }
+            set {
+                if ((this.IsAliveField.Equals(value) != true)) {
+                    this.IsAliveField = value;
+                    this.RaisePropertyChanged("IsAlive");
                 }
             }
         }
@@ -419,12 +435,6 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/ApplyGameRules", ReplyAction="http://tempuri.org/ITamagotchiService/ApplyGameRulesResponse")]
         System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.Tamagotchi> ApplyGameRulesAsync(TamagotchiApp.TamagotchiServiceLocal.Tamagotchi tamagotchi);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/StartTimer", ReplyAction="http://tempuri.org/ITamagotchiService/StartTimerResponse")]
-        void StartTimer();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamagotchiService/StartTimer", ReplyAction="http://tempuri.org/ITamagotchiService/StartTimerResponse")]
-        System.Threading.Tasks.Task StartTimerAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -532,14 +542,6 @@ namespace TamagotchiApp.TamagotchiServiceLocal {
         
         public System.Threading.Tasks.Task<TamagotchiApp.TamagotchiServiceLocal.Tamagotchi> ApplyGameRulesAsync(TamagotchiApp.TamagotchiServiceLocal.Tamagotchi tamagotchi) {
             return base.Channel.ApplyGameRulesAsync(tamagotchi);
-        }
-        
-        public void StartTimer() {
-            base.Channel.StartTimer();
-        }
-        
-        public System.Threading.Tasks.Task StartTimerAsync() {
-            return base.Channel.StartTimerAsync();
         }
     }
 }

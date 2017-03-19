@@ -17,8 +17,7 @@ namespace TamagotchiWeb.Controllers
             System.Timers.Timer timScheduledTask = new System.Timers.Timer();
 
             // Timer interval is set in miliseconds,
-            // In this case, we'll run a task every minute
-            timScheduledTask.Interval = 5000;
+            timScheduledTask.Interval = 10000;
 
             timScheduledTask.Enabled = true;
 
@@ -38,7 +37,6 @@ namespace TamagotchiWeb.Controllers
         }
         
 
-
         // GET: Index
         public ActionResult Index()
         {  
@@ -56,8 +54,8 @@ namespace TamagotchiWeb.Controllers
             TamagotchiServiceLocal.Tamagotchi tamagotchi = service.GetTamagotchi(id);
 
             ViewBag.Message = "Your detail page.";
-
             ViewBag.tamagotchi = tamagotchi;
+            ViewBag.state = tamagotchi.State;
 
             return View();
         }
@@ -69,6 +67,15 @@ namespace TamagotchiWeb.Controllers
             return View();
         }
 
+        // POST: Detail
+        public ActionResult Add()
+        {
+            string name = Request.Form["tbName"];
+            service.AddTamagotchi(name);
+
+            ViewBag.result = "success";
+            return View();
+        }
         // POST: Detail
         public RedirectToRouteResult Action()
         {

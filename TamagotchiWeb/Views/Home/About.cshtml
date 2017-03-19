@@ -7,14 +7,17 @@
 {
     <div class="alert alert-info">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Message:</strong> @ViewBag.message
+        <strong>Message:</strong> @ViewBag.state.BusyMessage
     </div>
 }
 
 <p><strong>State:</strong></p>
 @{
-    var imagePath = "/Images/" + ViewBag.highestProperty;
-
+    var imagePath = "";
+    if (ViewBag.state != null)
+    {
+       imagePath = "/Images/" + ViewBag.state.HighestProperty;
+    }
 }
 <img src="@(imagePath).png" />
 <p>Health: @ViewBag.tamagotchi.Health</p>

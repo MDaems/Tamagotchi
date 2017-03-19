@@ -126,14 +126,4 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="StartTimer">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="StartTimerResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
 </xs:schema>

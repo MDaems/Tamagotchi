@@ -72,7 +72,7 @@ namespace TamagotchiApp
             UpdateTimer.Interval = TimeSpan.FromSeconds(5.0);
             UpdateTimer.Tick += Update_timer;
 
-            service.StartTimer();
+            //service.StartTimer();
 
             EatCommand = new RelayCommand(Eat);
             SleepCommand = new RelayCommand(Sleep);

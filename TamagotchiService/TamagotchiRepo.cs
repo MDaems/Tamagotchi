@@ -38,7 +38,10 @@ namespace TamagotchiService
             tamagotchi.Sleep = 0;
             tamagotchi.Boredom = 0;
             tamagotchi.Health = 100;
-          
+
+            tamagotchi.BusyTill = DateTime.Now;
+            tamagotchi.LastAccess = DateTime.Now;
+
             context.Tamagotchi.Add(tamagotchi);
             context.SaveChanges();
 

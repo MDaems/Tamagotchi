@@ -29,3 +29,34 @@ C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\Tamagotchi\bin\D
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\Tamagotchi\bin\Debug\Mvvm.xml
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\Tamagotchi\obj\Debug\App.baml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\TamagotchiApp.exe.config
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.exe
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\TamagotchiApp.exe
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\TamagotchiApp.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\Mvvm.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\bin\Debug\Mvvm.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.csprojResolveAssemblyReference.cache
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\MainWindow.g.cs
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\App.g.cs
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp_MarkupCompile.cache
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp_MarkupCompile.lref
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\App.baml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\MainWindow.baml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.g.resources
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.Properties.Resources.resources
+C:\Users\Micky\Documents\GitHub\Tamagotchi\Tamagotchi\obj\Debug\TamagotchiApp.csproj.GenerateResource.Cache

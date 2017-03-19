@@ -94,7 +94,11 @@ namespace TamagotchiApp
         {
             get
             {
-                return "/Images/"+ _state.HighestProperty +".png";
+                if (_state != null)
+                {
+                    return "/Images/" + _state.HighestProperty + ".png";
+                }
+                return "";
             }
             set
             {
@@ -108,7 +112,11 @@ namespace TamagotchiApp
         {
             get
             {
-                return _state.HighestPropertyMessage;
+                if (_state != null)
+                {
+                    return _state.HighestPropertyMessage;
+                }
+                return "";
             }
             set
             {
@@ -122,7 +130,11 @@ namespace TamagotchiApp
         {
             get
             {
-                return _state.BusyMessage;
+                if (_state != null)
+                {
+                    return _state.BusyMessage;
+                }
+                return "";
             }
             set
             {
