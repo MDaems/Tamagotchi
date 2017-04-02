@@ -16,6 +16,7 @@
     var imagePath = "";
     if (ViewBag.state != null)
     {
+       imagePath = "http://nasdaems.synology.me/Images/" + ViewBag.state.HighestProperty;
     }
 }
 <img src="@(imagePath).png" />

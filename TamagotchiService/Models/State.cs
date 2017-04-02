@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -27,10 +28,11 @@ namespace TamagotchiWebService
 
         private void CheckIfBusy(Tamagotchi tamagotchi)
         {
-            if (tamagotchi.BusyTill > DateTime.UtcNow)
+            if (tamagotchi.BusyTill > DateTime.Now)
             {
                 CanPerformAction = false;
-                BusyMessage = "Tamagotchi " + tamagotchi.Name + " is busy till: " + tamagotchi.BusyTill.ToLocalTime().ToLongTimeString();
+
+                BusyMessage = "Tamagotchi " + tamagotchi.Name + " is busy till: " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
             }
             else
             {
