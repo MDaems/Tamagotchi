@@ -38,6 +38,7 @@ namespace TamagotchiService
             tamagotchi.Sleep = 0;
             tamagotchi.Boredom = 0;
             tamagotchi.Health = 100;
+            tamagotchi.IsAlive = true;
 
             tamagotchi.BusyTill = DateTime.Now;
             tamagotchi.LastAccess = DateTime.Now;
@@ -54,11 +55,11 @@ namespace TamagotchiService
             //{
             //    var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
 
-            //    DateTime now = DateTime.UtcNow;
+            //    DateTime now = DateTime.Now;
             //    TimeSpan difference = now.Subtract(tamagotchi.LastAccess);
             //    tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
 
-            //    tamagotchi.LastAccess = DateTime.UtcNow;
+            //    tamagotchi.LastAccess = DateTime.Now;
 
             //    Random random = new Random();
             //    tamagotchi.Hunger += random.Next(5, 10);
@@ -79,7 +80,7 @@ namespace TamagotchiService
                 var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
 
                 tamaContext.Age = 0;
-                tamaContext.LastAccess = DateTime.UtcNow;
+                tamaContext.LastAccess = DateTime.Now;
                 tamaContext.Hunger = 0;
                 tamaContext.Sleep = 0;
                 tamaContext.Boredom = 0;
@@ -93,11 +94,11 @@ namespace TamagotchiService
         {
             var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
 
-            DateTime now = DateTime.UtcNow;
+            DateTime now = DateTime.Now;
             TimeSpan difference = now.Subtract(tamaContext.LastAccess);
             tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
 
-            tamaContext.LastAccess = DateTime.UtcNow;
+            tamaContext.LastAccess = DateTime.Now;
 
             Random random = new Random();
             tamaContext.Hunger += random.Next(5, 10);
@@ -107,6 +108,11 @@ namespace TamagotchiService
             if (tamaContext.Hunger > 100) { tamaContext.Hunger = 100; }
             if (tamaContext.Sleep > 100) { tamaContext.Sleep = 100; }
             if (tamaContext.Boredom > 100) { tamaContext.Boredom = 100; }
+            if (tamaContext.Health > 100) { tamaContext.Health = 100; }
+
+            if (tamaContext.Hunger < 0) { tamaContext.Hunger = 0; }
+            if (tamaContext.Sleep < 0) { tamaContext.Sleep = 0; }
+            if (tamaContext.Boredom < 0) { tamaContext.Boredom = 0; }
             if (tamaContext.Health < 0) { tamaContext.Health = 0; }
 
             context.SaveChanges();

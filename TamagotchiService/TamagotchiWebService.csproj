@@ -165,6 +165,7 @@
     <Content Include="TamagotchiModel.edmx.diagram">
       <DependentUpon>TamagotchiModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\TamagotchiWebService - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

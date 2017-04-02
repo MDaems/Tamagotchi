@@ -87,6 +87,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Tamagotchi_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\TamagotchiVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -146,6 +151,25 @@
     <None Include="Service References\TamagotchiServiceLocal\TamagotchiService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiApp.Tamagotchi_Service.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiApp.Tamagotchi_Service.Tamagotchi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService.wsdl" />
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -155,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\TamagotchiServiceLocal\" />
+    <WCFMetadataStorage Include="Service References\Tamagotchi_Service\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\TamagotchiServiceLocal\TamagotchiService.disco" />
@@ -181,6 +206,21 @@
     <Resource Include="Images\Boredom.png" />
     <Resource Include="Images\Hunger.png" />
     <Resource Include="Images\Sleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Tamagotchi_Service\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Tamagotchi_Service\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Tamagotchi_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

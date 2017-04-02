@@ -9,15 +9,15 @@ namespace TamagotchiApp
 {
     class TamagotchiVM : INotifyPropertyChanged
     {
-        private TamagotchiServiceLocal.Tamagotchi _tamagotchi;
-        private TamagotchiServiceLocal.State _state;
+        private Tamagotchi_Service.Tamagotchi _tamagotchi;
+        private Tamagotchi_Service.State _state;
 
-        public TamagotchiVM(int ID, TamagotchiServiceLocal.Tamagotchi tamagotchi)
+        public TamagotchiVM(int ID, Tamagotchi_Service.Tamagotchi tamagotchi)
         {
             _tamagotchi = tamagotchi;
         }
 
-        public void Update(TamagotchiServiceLocal.Tamagotchi tamagotchi)
+        public void Update(Tamagotchi_Service.Tamagotchi tamagotchi)
         {
             _tamagotchi = tamagotchi;
             _state = tamagotchi.State;

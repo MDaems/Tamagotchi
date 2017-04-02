@@ -15,3 +15,20 @@ C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebSer
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.dll
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.pdb
 C:\Users\Micky\Documents\Visual Studio 2015\Projects\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\ApplicationInsights.config
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\TamagotchiWebServiceTest.dll.config
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\TamagotchiWebServiceTest.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\TamagotchiWebServiceTest.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Castle.Core.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Moq.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\TamagotchiWebService.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\EntityFramework.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\TamagotchiWebService.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Castle.Core.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Moq.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\bin\Debug\EntityFramework.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.csprojResolveAssemblyReference.cache
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiWebServiceTest\obj\Debug\TamagotchiWebServiceTest.pdb

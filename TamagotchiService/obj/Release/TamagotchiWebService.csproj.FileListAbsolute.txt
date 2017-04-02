@@ -21,3 +21,26 @@ c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiServic
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\EntityFramework.xml
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\bin\EntityFramework.SqlServer.xml
 c:\users\micky\documents\visual studio 2015\Projects\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.csprojResolveAssemblyReference.cache
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\ApplicationInsights.config
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\TamagotchiWebService.dll.config
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\TamagotchiWebService.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\TamagotchiWebService.pdb
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\EntityFramework.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\EntityFramework.SqlServer.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.Web.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\EntityFramework.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\EntityFramework.SqlServer.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.Web.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.csprojResolveAssemblyReference.cache
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.dll
+C:\Users\Micky\Documents\GitHub\Tamagotchi\TamagotchiService\obj\Release\TamagotchiWebService.pdb

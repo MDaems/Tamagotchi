@@ -13,7 +13,7 @@ namespace TamagotchiApp
 {
     class MainViewModel : INotifyPropertyChanged
     {
-        TamagotchiServiceLocal.TamagotchiServiceClient service;
+        Tamagotchi_Service.TamagotchiServiceClient service;
 
         private ObservableCollection<TamagotchiVM> _tamagotchies;
         public ObservableCollection<TamagotchiVM> Tamagotchies
@@ -50,7 +50,7 @@ namespace TamagotchiApp
             Tamagotchies = new ObservableCollection<TamagotchiVM>();
 
             //creating the object of WCF service client    
-            service = new TamagotchiServiceLocal.TamagotchiServiceClient();
+            service = new Tamagotchi_Service.TamagotchiServiceClient();
                 //service.Abort();
            
             //service.ResetTamagotchies();
@@ -111,13 +111,16 @@ namespace TamagotchiApp
         {
             foreach (var item in Tamagotchies)
             {
-                service.ApplyGameRules(service.GetTamagotchi(item.ID));
-            }
-            
+                try { service.ApplyGameRules(service.GetTamagotchi(item.ID)); }
+                catch (Exception err) {
+                    Console.WriteLine(err.ToString()); }
+            }           
         }
         private void UpdateTamagotchi()
         {
-            SelectedTamagotchi.Update(service.GetTamagotchi(SelectedTamagotchi.ID));
+            try { SelectedTamagotchi.Update(service.GetTamagotchi(SelectedTamagotchi.ID));}
+            catch (Exception) { }
+
             RaisePropertyChanged("SelectedTamagotchi");
         }
 

@@ -17,7 +17,6 @@ namespace TamagotchiService
     {
         IRepository tamagotchiRepo;
         List<IGameRule> gameRules;
-        private IRepository @object;
 
         public TamagotchiService()
         {
@@ -70,35 +69,36 @@ namespace TamagotchiService
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
             State state = new State(tamagotchi);
 
-            tamagotchi.State = new State(tamagotchi);
+            tamagotchi.State = state;
 
             if (state.CanPerformAction)
             {
                 tamagotchi.Hunger -= 50;
                 if (HealthDecrease(10)) { tamagotchi.Health -= 20; }
-                tamagotchi.BusyTill = DateTime.UtcNow.AddSeconds(5);
+                tamagotchi.BusyTill = DateTime.Now.AddSeconds(5);
 
-                state.BusyMessage = tamagotchi.Name + " is eating till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
+                state.BusyMessage = tamagotchi.Name + " is eating till " + tamagotchi.BusyTill.ToLongTimeString();
+
+                tamagotchiRepo.Update(tamagotchi);
             }
-
-            tamagotchiRepo.Update(tamagotchi);
         }
         public void Sleep(int id)
         {
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
             State state = new State(tamagotchi);
 
-            tamagotchi.State = new State(tamagotchi);
+            tamagotchi.State = state;
 
             if (state.CanPerformAction)
             {
                 tamagotchi.Sleep -= 25;
                 tamagotchi.Health += 10;
-                tamagotchi.BusyTill = DateTime.UtcNow.AddSeconds(15);
+                tamagotchi.BusyTill = DateTime.Now.AddSeconds(15);
 
-                state.BusyMessage = tamagotchi.Name + " is sleeping till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
+                state.BusyMessage = tamagotchi.Name + " is sleeping till " + tamagotchi.BusyTill.ToLongTimeString();
+
+                tamagotchiRepo.Update(tamagotchi);
             }
-            tamagotchiRepo.Update(tamagotchi);
         } 
         public void Play(int id)
         {
@@ -111,18 +111,19 @@ namespace TamagotchiService
             {
                 tamagotchi.Boredom -= 35;
                 if (HealthDecrease(20)) { tamagotchi.Health -= 10; }
-                tamagotchi.BusyTill = DateTime.UtcNow.AddSeconds(8);
+                tamagotchi.BusyTill = DateTime.Now.AddSeconds(8);
 
-                state.BusyMessage = tamagotchi.Name + " is playing till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
+                state.BusyMessage = tamagotchi.Name + " is playing till " + tamagotchi.BusyTill.ToLongTimeString();
+
+                tamagotchiRepo.Update(tamagotchi);
             }
-            tamagotchiRepo.Update(tamagotchi);
         }
         public void Hug(int id)
         {
             Tamagotchi tamagotchi = tamagotchiRepo.Get(id);
             State state = new State(tamagotchi);
 
-            tamagotchi.State = new State(tamagotchi);
+            tamagotchi.State = state;
 
             if (state.CanPerformAction)
             {
@@ -130,12 +131,12 @@ namespace TamagotchiService
                 tamagotchi.Sleep -= 10;
                 tamagotchi.Boredom -= 10;
                 tamagotchi.Health += 10;
-                tamagotchi.BusyTill = DateTime.UtcNow.AddSeconds(3);
+                tamagotchi.BusyTill = DateTime.Now.AddSeconds(3);
 
                 state.BusyMessage = tamagotchi.Name + " is huging till " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString();
-            }
 
-            tamagotchiRepo.Update(tamagotchi);
+                tamagotchiRepo.Update(tamagotchi);
+            }
         }
 
         private bool HealthDecrease(int perc)

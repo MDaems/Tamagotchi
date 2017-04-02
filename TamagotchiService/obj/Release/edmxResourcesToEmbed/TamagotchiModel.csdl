@@ -11,6 +11,9 @@
     <Property Name="Sleep" Type="Int32" Nullable="false" />
     <Property Name="Boredom" Type="Int32" Nullable="false" />
     <Property Name="Health" Type="Int32" Nullable="false" />
+    <Property Name="LastAccess" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="BusyTill" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsAlive" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityContainer Name="testDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Tamagotchi" EntityType="Self.Tamagotchi" />

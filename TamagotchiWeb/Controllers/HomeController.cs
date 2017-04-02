@@ -34,8 +34,7 @@ namespace TamagotchiWeb.Controllers
             {
                 service.ApplyGameRules(service.GetTamagotchi(item.ID));
             }
-        }
-        
+        }  
 
         // GET: Index
         public ActionResult Index()
@@ -68,13 +67,14 @@ namespace TamagotchiWeb.Controllers
         }
 
         // POST: Detail
-        public ActionResult Add()
+        public RedirectToRouteResult Add()
         {
             string name = Request.Form["tbName"];
             service.AddTamagotchi(name);
 
             ViewBag.result = "success";
-            return View();
+
+            return RedirectToAction("");
         }
         // POST: Detail
         public RedirectToRouteResult Action()
