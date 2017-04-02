@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<h2>Detail</h2>
+@if (ViewBag.message != null)
+{
+    <div class="alert alert-info">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Message:</strong> @ViewBag.state.BusyMessage
+    </div>
+}
+
+<p><strong>State:</strong></p>
+@{
+    var imagePath = "";
+    if (ViewBag.state != null)
+    {
+       imagePath = "http://nasdaems.synology.me/Images/" + ViewBag.state.HighestProperty;
+    }
+}
+<img src="@(imagePath).png" />
+<p>Health: @ViewBag.tamagotchi.Health</p>
+<p>Hunger: @ViewBag.tamagotchi.Hunger</p>
+<p>Sleep: @ViewBag.tamagotchi.Sleep</p>
+<p>Boredom: @ViewBag.tamagotchi.Boredom</p>
+
+<form action="/Home/Action" method="post">
+    <button type="submit" class="btn btn-primary" name="btAction" value="Eat">Eat</button>
+    <button type="submit" class="btn btn-primary" name="btAction" value="Sleep">Sleep</button>
+    <button type="submit" class="btn btn-primary" name="btAction" value="Workout">Workout</button>
+    <button type="submit" class="btn btn-primary" name="btAction" value="Hug">Hug</button>
+    <button type="submit" class="btn btn-primary" name="btAction" value="Play">Play</button>
+    <input type="hidden" value="@ViewBag.tamagotchi.ID" name="tbID" />
+</form>

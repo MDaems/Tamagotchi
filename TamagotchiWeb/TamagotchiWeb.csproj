@@ -213,6 +213,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Tamagotchi_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +227,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <None Include="Properties\PublishProfiles\TamagotchiWebsiteWCF - Web Deploy.pubxml" />
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService.wsdl" />
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\Tamagotchi_Service\TamagotchiWeb.Tamagotchi_Service.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Tamagotchi_Service\TamagotchiWeb.Tamagotchi_Service.Tamagotchi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Resource Include="Images\Boredom.png" />
     <Resource Include="Images\Hunger.png" />
     <Resource Include="Images\Sleep.png" />
@@ -248,6 +273,13 @@
     <None Include="Service References\TamagotchiServiceLocal\configuration91.svcinfo" />
     <None Include="Service References\TamagotchiServiceLocal\configuration.svcinfo" />
     <None Include="Service References\TamagotchiServiceLocal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Tamagotchi_Service\TamagotchiService.disco" />
+    <None Include="Service References\Tamagotchi_Service\configuration91.svcinfo" />
+    <None Include="Service References\Tamagotchi_Service\configuration.svcinfo" />
+    <None Include="Service References\Tamagotchi_Service\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -322,6 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\TamagotchiServiceLocal\" />
+    <WCFMetadataStorage Include="Service References\Tamagotchi_Service\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

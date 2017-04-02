@@ -1,0 +1,44 @@
+﻿@using TamagotchiWeb.TamagotchiServiceLocal;
+@model Tamagotchi
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+@{
+    if (ViewBag.result == "success")
+    {
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> You've adopted a new tamagotchi!
+    </div>
+    } else if(ViewBag.result == "error")
+    {
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error!</strong> You've already had a tamagotchi with that name!
+    </div>
+    }
+    }
+
+    <form action="/Home/Add" method="post">
+        <button type="submit" class="btn btn-success pull-right">Create tamagotchi</button>
+        <input id="tbName" name="tbName" type="text" class="form-control pull-right" placeholder="name" />
+    </form>
+
+    <h2>My Tamagothi's</h2>
+    <ul>
+       
+    @{
+
+        foreach (var item in ViewBag.Tamagotchis)
+        {
+            <li>
+                @Html.ActionLink((string)@item.Name, "About", "Home", new { id = item.ID }, null)
+            </li>
+        }
+        }
+
+    </ul>
+</div>
+

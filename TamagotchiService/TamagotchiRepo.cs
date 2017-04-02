@@ -49,47 +49,6 @@ namespace TamagotchiService
             tamagotchies.Add(tamagotchi);
         }
 
-        public void UpdateAll()
-        {
-            //foreach (var tamagotchi in tamagotchies)
-            //{
-            //    var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
-
-            //    DateTime now = DateTime.Now;
-            //    TimeSpan difference = now.Subtract(tamagotchi.LastAccess);
-            //    tamaContext.Age += Convert.ToInt32(difference.TotalSeconds);
-
-            //    tamagotchi.LastAccess = DateTime.Now;
-
-            //    Random random = new Random();
-            //    tamagotchi.Hunger += random.Next(5, 10);
-            //    tamagotchi.Sleep += random.Next(5, 10);
-            //    tamagotchi.Boredom += random.Next(5, 10);
-
-            //    if (tamagotchi.Hunger > 100) { tamagotchi.Hunger = 100; }
-            //    if (tamagotchi.Sleep > 100) { tamagotchi.Sleep = 100; }
-            //    if (tamagotchi.Boredom > 100) { tamagotchi.Boredom = 100; }        
-            //}
-            //context.SaveChanges();
-        }
-
-        public void ResetAll()
-        {
-            foreach (var tamagotchi in tamagotchies)
-            {
-                var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
-
-                tamaContext.Age = 0;
-                tamaContext.LastAccess = DateTime.Now;
-                tamaContext.Hunger = 0;
-                tamaContext.Sleep = 0;
-                tamaContext.Boredom = 0;
-                tamaContext.Health = 100;
-
-                context.SaveChanges();
-            }
-        }
-
         public void Update(Tamagotchi tamagotchi)
         {
             var tamaContext = context.Tamagotchi.Find(tamagotchi.ID);
@@ -104,6 +63,9 @@ namespace TamagotchiService
             tamaContext.Hunger += random.Next(5, 10);
             tamaContext.Sleep += random.Next(5, 10);
             tamaContext.Boredom += random.Next(5, 10);
+            tamaContext.Health = tamagotchi.Health;
+
+            tamaContext.IsAlive = tamagotchi.IsAlive;
 
             if (tamaContext.Hunger > 100) { tamaContext.Hunger = 100; }
             if (tamaContext.Sleep > 100) { tamaContext.Sleep = 100; }

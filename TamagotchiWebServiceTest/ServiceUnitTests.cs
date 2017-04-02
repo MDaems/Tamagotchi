@@ -5,27 +5,13 @@ using Moq;
 using TamagotchiService;
 using System.Collections.Generic;
 using TamagotchiWebService.Models;
+using System.Linq;
 
 namespace TamagotchiWebServiceTest
 {
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void EatUpdateMethod()
-        {
-            //Arrange
-            Tamagotchi tama = new Tamagotchi();
-            Mock<IRepository> mockRepo = new Mock<IRepository>();
-            TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
-            mockRepo.Setup(r => r.Get(tama.ID)).Returns(tama);
-
-            ////Act
-            service.Eat(tama.ID);
-
-            ////Assert
-            mockRepo.Verify(m => m.Update(tama));
-        }
         [TestMethod]
         public void EatPerformActionTrue()
         {
@@ -35,7 +21,7 @@ namespace TamagotchiWebServiceTest
             tama.Hunger = 50;
             tama.Health = 100;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-5);
+            tama.BusyTill = DateTime.Now.AddHours(-5);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -56,7 +42,7 @@ namespace TamagotchiWebServiceTest
             tama.Hunger = 50;
             tama.Health = 100;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(1);
+            tama.BusyTill = DateTime.Now.AddHours(1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -79,7 +65,7 @@ namespace TamagotchiWebServiceTest
             tama.Sleep = 25;
             tama.Health = 90;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-5);
+            tama.BusyTill = DateTime.Now.AddHours(-5);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -101,7 +87,7 @@ namespace TamagotchiWebServiceTest
             tama.Sleep = 25;
             tama.Health = 100;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(1);
+            tama.BusyTill = DateTime.Now.AddHours(1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -122,7 +108,7 @@ namespace TamagotchiWebServiceTest
             tama.Sleep = 25;
             tama.Health = 0;
             tama.IsAlive = false;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-1);
+            tama.BusyTill = DateTime.Now.AddHours(-1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -145,7 +131,7 @@ namespace TamagotchiWebServiceTest
             tama.Boredom = 35;
             tama.Health = 100;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-5);
+            tama.BusyTill = DateTime.Now.AddHours(-5);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -166,7 +152,7 @@ namespace TamagotchiWebServiceTest
             tama.Boredom = 35;
             tama.Health = 100;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(1);
+            tama.BusyTill = DateTime.Now.AddHours(1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -187,7 +173,7 @@ namespace TamagotchiWebServiceTest
             tama.Boredom = 35;
             tama.Health = 0;
             tama.IsAlive = false;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-1);
+            tama.BusyTill = DateTime.Now.AddHours(-1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -212,7 +198,7 @@ namespace TamagotchiWebServiceTest
             tama.Boredom = 10;
             tama.Health = 90;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-5);
+            tama.BusyTill = DateTime.Now.AddHours(-5);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -238,7 +224,7 @@ namespace TamagotchiWebServiceTest
             tama.Boredom = 10;
             tama.Health = 90;
             tama.IsAlive = true;
-            tama.BusyTill = DateTime.UtcNow.AddHours(1);
+            tama.BusyTill = DateTime.Now.AddHours(1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -264,7 +250,7 @@ namespace TamagotchiWebServiceTest
             tama.Boredom = 10;
             tama.Health = 0;
             tama.IsAlive = false;
-            tama.BusyTill = DateTime.UtcNow.AddHours(-1);
+            tama.BusyTill = DateTime.Now.AddHours(-1);
 
             Mock<IRepository> mockRepo = new Mock<IRepository>();
             TamagotchiService.TamagotchiService service = new TamagotchiService.TamagotchiService(mockRepo.Object);
@@ -289,12 +275,12 @@ namespace TamagotchiWebServiceTest
             tamagotchi.Name = "MDaems";
             tamagotchi.Health = 100;
             tamagotchi.IsAlive = true;
-            tamagotchi.BusyTill = DateTime.UtcNow.AddHours(1);
+            tamagotchi.BusyTill = DateTime.Now.AddHours(1);
             State state = new State(tamagotchi);
 
             //Assert
             Assert.AreEqual(false, state.CanPerformAction);
-            Assert.AreEqual("Tamagotchi " + tamagotchi.Name + " is busy till: " + tamagotchi.BusyTill.ToLocalTime().ToLongTimeString(), state.BusyMessage);
+            Assert.AreEqual("Tamagotchi " + tamagotchi.Name + " is busy till: " + tamagotchi.BusyTill.AddHours(2).ToLongTimeString(), state.BusyMessage);
         }
         [TestMethod]
         public void StateIsDead()
@@ -454,6 +440,42 @@ namespace TamagotchiWebServiceTest
 
             //Assert
             Assert.AreEqual(100, tamagotchi.Health);
+        }
+
+
+        [TestMethod]
+        public void GetAll()
+        {
+            // create some mock tamagotchies
+            List<Tamagotchi> tamagotchies = new List<Tamagotchi>
+                {
+                    new Tamagotchi { ID=1, Name = "Henk" },
+                    new Tamagotchi { ID=2, Name = "Harry" }
+                };
+
+            // Mock the Repository using Moq
+            Mock<IRepository> mockRepository = new Mock<IRepository>();
+
+            // Return all
+            mockRepository.Setup(mr => mr.GetAll()).Returns(tamagotchies);
+        }
+
+        [TestMethod]
+        public void GetByID()
+        {
+            // create some mock tamagotchies
+            List<Tamagotchi> tamagotchies = new List<Tamagotchi>
+                {
+                    new Tamagotchi { ID=1, Name = "Henk" },
+                    new Tamagotchi { ID=2, Name = "Harry" }
+                };
+
+            // Mock the Products Repository using Moq
+            Mock<IRepository> mockRepository = new Mock<IRepository>();
+
+            mockRepository.Setup(mr => mr.Get(
+                 It.IsAny<int>())).Returns((int i) => tamagotchies.Where(
+                 x => x.ID == i).Single());
         }
     }
 }

@@ -52,7 +52,6 @@ namespace TamagotchiService
             return tamagotchi;
         }             
 
-
         public Tamagotchi ApplyGameRules(Tamagotchi tamagotchi)
         {
             foreach (var rule in gameRules)
@@ -149,24 +148,6 @@ namespace TamagotchiService
                 return true;
             }
             return false;
-        }
-
-        public void ResetTamagotchies()
-        {
-            tamagotchiRepo.ResetAll();
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
         }
     }
 }

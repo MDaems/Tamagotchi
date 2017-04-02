@@ -8,8 +8,8 @@ namespace TamagotchiWeb.Controllers
 {
     public class HomeController : Controller
     {
-        TamagotchiServiceLocal.TamagotchiServiceClient service = new TamagotchiServiceLocal.TamagotchiServiceClient();
-        List<TamagotchiServiceLocal.Tamagotchi> TamagotchiList = new List<TamagotchiServiceLocal.Tamagotchi>();
+        Tamagotchi_Service.TamagotchiServiceClient service = new Tamagotchi_Service.TamagotchiServiceClient();
+        List<Tamagotchi_Service.Tamagotchi> TamagotchiList = new List<Tamagotchi_Service.Tamagotchi>();
 
         public HomeController()
         {
@@ -39,7 +39,7 @@ namespace TamagotchiWeb.Controllers
         // GET: Index
         public ActionResult Index()
         {  
-            foreach (TamagotchiServiceLocal.Tamagotchi item in service.GetAllTamagotchies())
+            foreach (Tamagotchi_Service.Tamagotchi item in service.GetAllTamagotchies())
             {
                 TamagotchiList.Add(item);
             }
@@ -50,7 +50,7 @@ namespace TamagotchiWeb.Controllers
         // GET: Index
         public ActionResult About(int id)
         {
-            TamagotchiServiceLocal.Tamagotchi tamagotchi = service.GetTamagotchi(id);
+            Tamagotchi_Service.Tamagotchi tamagotchi = service.GetTamagotchi(id);
 
             ViewBag.Message = "Your detail page.";
             ViewBag.tamagotchi = tamagotchi;

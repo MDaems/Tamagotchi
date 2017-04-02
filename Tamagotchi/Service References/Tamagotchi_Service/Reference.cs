@@ -116,9 +116,6 @@ namespace TamagotchiApp.Tamagotchi_Service {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TamagotchiApp.Tamagotchi_Service.State StateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int hungerMultiplierField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -268,19 +265,6 @@ namespace TamagotchiApp.Tamagotchi_Service {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int hungerMultiplier {
-            get {
-                return this.hungerMultiplierField;
-            }
-            set {
-                if ((this.hungerMultiplierField.Equals(value) != true)) {
-                    this.hungerMultiplierField = value;
-                    this.RaisePropertyChanged("hungerMultiplier");
                 }
             }
         }

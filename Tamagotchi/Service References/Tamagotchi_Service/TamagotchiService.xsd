@@ -19,7 +19,6 @@
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sleep" type="xs:int" />
       <xs:element minOccurs="0" name="State" nillable="true" type="tns:State" />
-      <xs:element minOccurs="0" name="hungerMultiplier" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tamagotchi" nillable="true" type="tns:Tamagotchi" />
